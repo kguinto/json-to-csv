@@ -3,17 +3,20 @@ $(document).ready(()=>{
   $('#json-form').on('submit', (e)=>{
     e.preventDefault();
 
-    let jsonText =  $('#json-text').val();
+    let jsonText =  $('#json-text').val().trim();
     console.log(jsonText);
 
     try {
       JSON.parse(jsonText);
 
-      console.log('Sending POST : ', {text: jsonText});
+      console.log('Sending POST : ',
+      { text: jsonText});
+
       $.post('/',
-      jsonText,
+      {text: jsonText},
       (data) => {
         console.log(data);
+        $('#csv-result').html(data);
       })
 
     } catch (error) {
