@@ -1,15 +1,23 @@
 <html>
   <head>
     <title>JSON to CSV converter</title>
+
+    <link rel="stylesheet" type="text/css" href="./index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
-    <h1>Convert your JSON to CSV!</h1>
-    <form id="json-form">
-      <textarea id="json-text"></textarea>
-      <button type="submit">Convert!</button>
-    </form>
-    <div id="csv-result"></div>
+    <div class="container">
+      <div class="header">
+          <h1>Convert your JSON to CSV!</h1>
+      </div>
+      <div class="content">
+        <form id="json-form">
+            <textarea id="json-text"></textarea>
+            <button type="submit">Convert!</button>
+          </form>
+          <pre id="csv-result"></pre>
+      </div>
+    </div>    
     <script src="./index.js"></script>
   </body>
 </html>

@@ -13,9 +13,6 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
 
 app.post('/', (req, res, next)=>{
-  console.log('POST REQUEST POST REQUEST POST REQUEST');
-  console.log(req.body.text);
-
   let csv = converter.convert(req.body.text);
 
   res.status(200).send(JSON.stringify(csv));
